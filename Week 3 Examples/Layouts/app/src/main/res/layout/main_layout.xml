@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Linear Layout"
+        android:id="@+id/btnLinear"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Frame Layout"
+        android:id="@+id/btnFrame"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Table Layout"
+        android:id="@+id/btnTable"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Relative Layout"
+        android:id="@+id/btnRelative"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Absolute Layout"
+        android:id="@+id/btnAbsolute"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:onClick="onClick" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="ScrollView"
+        android:id="@+id/btnScroll"
+        android:layout_weight="1"
+        android:onClick="onClick" />
+</LinearLayout>

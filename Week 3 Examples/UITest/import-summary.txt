@@ -1,0 +1,84 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* UITest\
+* UITest\.classpath
+* UITest\.project
+* UITest\AndroidManifest.xml
+* UITest\bin\
+* UITest\bin\UITest.apk
+* UITest\bin\classes.dex
+* UITest\bin\classes\
+* UITest\bin\classes\test\
+* UITest\bin\classes\test\uisamples\
+* UITest\bin\classes\test\uisamples\R$attr.class
+* UITest\bin\classes\test\uisamples\R$drawable.class
+* UITest\bin\classes\test\uisamples\R$id.class
+* UITest\bin\classes\test\uisamples\R$layout.class
+* UITest\bin\classes\test\uisamples\R$string.class
+* UITest\bin\classes\test\uisamples\R.class
+* UITest\bin\classes\test\uisamples\UITestActivity$1.class
+* UITest\bin\classes\test\uisamples\UITestActivity$2.class
+* UITest\bin\classes\test\uisamples\UITestActivity$3.class
+* UITest\bin\classes\test\uisamples\UITestActivity.class
+* UITest\bin\res\
+* UITest\bin\res\drawable-hdpi\
+* UITest\bin\res\drawable-hdpi\ic_launcher.png
+* UITest\bin\res\drawable-ldpi\
+* UITest\bin\res\drawable-ldpi\ic_launcher.png
+* UITest\bin\res\drawable-mdpi\
+* UITest\bin\res\drawable-mdpi\ic_launcher.png
+* UITest\bin\resources.ap_
+* UITest\gen\
+* UITest\gen\test\
+* UITest\gen\test\uisamples\
+* UITest\gen\test\uisamples\R.java
+* UITest\proguard.cfg
+* UITest\project.properties
+* UITest\res\
+* UITest\res\drawable-hdpi\
+* UITest\res\drawable-hdpi\ic_launcher.png
+* UITest\res\drawable-ldpi\
+* UITest\res\drawable-ldpi\ic_launcher.png
+* UITest\res\drawable-mdpi\
+* UITest\res\drawable-mdpi\ic_launcher.png
+* UITest\res\layout\
+* UITest\res\layout\main.xml
+* UITest\res\values\
+* UITest\res\values\strings.xml
+* UITest\src\
+* UITest\src\test\
+* UITest\src\test\uisamples\
+* UITest\src\test\uisamples\UITestActivity.java
+* proguard.cfg
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

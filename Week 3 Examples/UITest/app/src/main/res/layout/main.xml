@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="114dp"
+        android:layout_height="wrap_content"
+        android:text="@string/student_name" />
+    <EditText
+        android:id="@+id/txtProgram"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <requestFocus />
+    </EditText>
+
+    <RadioGroup
+        android:id="@+id/RadioGroup01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <RadioButton
+            android:id="@+id/rdSET"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/setName" />
+
+        <RadioButton
+            android:id="@+id/rdIG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/igName" />
+
+        <RadioButton
+            android:id="@+id/rdHIT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hitName" />
+
+        <RadioButton
+            android:id="@+id/rdSSD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ssdName" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/chkDegree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_degree" />
+	<ToggleButton
+		android:id="@+id/toggle_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Toggle"
+		android:textOff="Disabled"
+		android:textOn="Enabled" />
+    
+    <DatePicker
+        android:id="@+id/datePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <RatingBar android:id="@+id/ratebar1"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:numStars="4"
+	android:stepSize="0.25" />
+
+</LinearLayout>
+</ScrollView>

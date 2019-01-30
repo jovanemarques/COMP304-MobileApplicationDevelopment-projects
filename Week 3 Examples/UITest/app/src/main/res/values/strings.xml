@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="student_name">Name</string>
+    <string name="app_name">UITest</string>
+    <string name="setName">SET</string>
+    <string name="igName">IG</string>
+    <string name="hitName">HIT</string>
+    <string name="ssdName">SSD</string>
+    <string name="str_degree">SET + Degree</string>
+</resources>

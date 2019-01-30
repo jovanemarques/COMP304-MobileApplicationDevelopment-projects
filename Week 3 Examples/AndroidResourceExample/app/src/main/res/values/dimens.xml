@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textPointSize">10sp</dimen>
+    <dimen name="FourteenPt">14pt</dimen>
+    <dimen name="OneInch">1in</dimen>
+    <dimen name="TenMillimeters">10mm</dimen>
+    <dimen name="TenPixels">10px</dimen>
+</resources>

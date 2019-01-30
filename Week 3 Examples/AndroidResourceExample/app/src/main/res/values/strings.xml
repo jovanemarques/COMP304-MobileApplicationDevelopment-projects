@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Android Resource Example</string>
+    <string name="hello">Using Android Resource</string>
+    <string name="display">Demonstrating Colour and Font</string>
+    <string-array name="flavours">
+        <item>Vanilla</item>
+        <item>Chocolate</item>
+        <item>Strawberry</item>
+        <item>Blueberry</item>
+    </string-array>
+</resources>
