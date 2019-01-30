@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">jovanemarques_COMP304_Ex2</string>
+    <!--movie strings to use-->
+    <string name="movieName">Avangers: Infinity War</string>
+    <string name="director">Anthony Russo, Joe Russo</string>
+    <string name="language">English</string>
+    <string name="releasedYear">2018</string>
+</resources>
