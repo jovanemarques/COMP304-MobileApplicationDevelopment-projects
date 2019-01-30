@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ActivityCycle</string>
+    <string name="hello">An example for Activity Life Cycle</string>
+</resources>
