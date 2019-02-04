@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="mandatory_text_field_style">
+	<item name="android:textColor">
+	    @color/mand_text_color</item>
+	<item name="android:textSize">
+	    @dimen/important_text</item>
+	<item name="android:textStyle">bold</item>
+	</style>
+	
+	<style name="optional_text_field_style">
+	<item name="android:textColor">
+	    @color/opt_text_color</item>
+	<item name="android:textSize">
+	    @dimen/unimportant_text</item>
+	<item name="android:textStyle">italic</item>
+	</style>
+</resources>

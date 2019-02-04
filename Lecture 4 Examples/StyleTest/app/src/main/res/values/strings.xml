@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Welcome to Styles Tests</string>
+	<string name="app_name">Styles Test</string>
+    <string name="opt_default">optional default</string>
+    <string name="opt_label">optional label 1</string>
+     <string name="mand_label">mandatory label 2</string>
+     <string name="mand_default">mandatory default</string>
+     
+    
+</resources>
