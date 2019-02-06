@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MovieListActivity" />
+        <activity android:name=".ShowTimeActivity" />
+        <activity android:name=".TicketTypeActivity" />
+        <activity android:name=".CheckoutActivity" />
+        <activity android:name=".ConfirmationActivity"></activity>
     </application>
 
 </manifest>

@@ -14,8 +14,8 @@
         app:srcCompat="@drawable/logo" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnBuy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buy Your Ticket" />
+        android:text="Buy Your Ticket" android:onClick="btnBuyClick"/>
 </LinearLayout>
