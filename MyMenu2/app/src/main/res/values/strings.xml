@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyMenu2</string>
+    <string-array name="colours">
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+    </string-array>
+</resources>
