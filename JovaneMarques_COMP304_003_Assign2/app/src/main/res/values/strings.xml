@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">New Cinema</string>
+    <string name="glass">Glass</string>
+    <string name="bumblebee">Bumblebee</string>
+    <string name="escape_room">Escape Room</string>
+    <string name="replicas">Replicas</string>
+    <string name="the_mule">The Mule</string>
     <string-array name="tickets_quantity">
         <item>1</item>
         <item>2</item>

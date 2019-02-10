@@ -7,7 +7,28 @@
     android:orientation="vertical"
     tools:context=".ShowTimeActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgMovieDetail"
+            android:layout_width="60pt"
+            android:layout_height="90pt"
+            app:srcCompat="@drawable/bumblebee" />
+
+        <TextView
+            android:id="@+id/txtMovieDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Bumblebee "
+            android:textSize="20pt" />
+    </LinearLayout>
+
     <RadioGroup
+        android:id="@+id/rgTimeList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -16,30 +37,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="12:50pm" />
+            android:text="12:50pm"
+            android:textSize="15pt" />
+
         <RadioButton
             android:id="@+id/rb215pm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="2:15pm" />
+            android:text="2:15pm"
+            android:textSize="15pt" />
+
         <RadioButton
             android:id="@+id/rb445pm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="4:45pm" />
+            android:text="4:45pm"
+            android:textSize="15pt" />
+
         <RadioButton
             android:id="@+id/rb650pm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="6:50pm" />
+            android:text="6:50pm"
+            android:textSize="15pt" />
+
         <RadioButton
             android:id="@+id/rb850pm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="8:50pm" />
+            android:text="8:50pm"
+            android:textSize="15pt" />
     </RadioGroup>
 </LinearLayout>
