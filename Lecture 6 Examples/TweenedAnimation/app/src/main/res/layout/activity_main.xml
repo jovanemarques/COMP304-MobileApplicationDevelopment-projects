@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	>
+	<LinearLayout
+		android:id="@+id/ButtonRow"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<Button
+		    android:id="@+id/ButtonStart"
+		    android:layout_width="89dp"
+		    android:layout_height="wrap_content"
+		    android:text="Start" >
+
+		</Button>
+
+		<Button
+		    android:id="@+id/ButtonStop"
+		    android:layout_width="92dp"
+		    android:layout_height="wrap_content"
+		    android:text="Stop" >
+		    
+		</Button>
+	</LinearLayout>
+	
+	<ImageView
+			android:id="@+id/ImageViewForTweening"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:minHeight="100px" android:minWidth="500px"
+			android:layout_margin="20px">
+	</ImageView>
+
+</LinearLayout>
