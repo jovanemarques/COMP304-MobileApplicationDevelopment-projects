@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Settings</string>
+
+    <string name="txt_title">Quick options:</string>
+    <string name="txt_storage">Occupied space:</string>
+    <string name="txtAvailableSpace">Available Space</string>
+    <string name="txtUsedSpace">Used Space</string>
+
+    <drawable name="blueDrawable">#00FF00</drawable>
+    <drawable name="yellowDrawable">#FF0000</drawable>
+
+    <string-array name="settings">
+        <item> Storage</item>
+        <item> Battery</item>
+        <item> Contacts</item>
+        <item> Display</item>
+        <item> Google</item>
+    </string-array>
+</resources>
