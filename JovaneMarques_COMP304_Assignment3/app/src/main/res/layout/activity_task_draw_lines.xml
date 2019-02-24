@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TaskDrawLinesActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Line thickness"
+                android:textSize="16dp"/>
+
+            <Spinner
+                android:id="@+id/spLineSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/lineSizes"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Line color"
+                android:textSize="16dp"/>
+
+            <RadioGroup
+                android:id="@+id/rgColor"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rdRed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:onClick="rdColorOnClick"
+                    android:text="Red"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/rdGreen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="rdColorOnClick"
+                    android:text="Green"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/rdYellow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="rdColorOnClick"
+                    android:text="Yellow"
+                    android:textSize="20dp" />
+
+            </RadioGroup>
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView android:layout_span="3"
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Arrows keys"
+                    android:textSize="16dp"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="@dimen/arrow_size"
+                    android:layout_height="@dimen/arrow_size" />
+
+                <ImageView
+                    android:id="@+id/imgArrowUp"
+                    android:layout_width="@dimen/arrow_size"
+                    android:layout_height="@dimen/arrow_size"
+                    android:src="@drawable/up_arrow_key" />
+
+                <ImageView
+                    android:layout_width="@dimen/arrow_size"
+                    android:layout_height="@dimen/arrow_size" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgArrowLeft"
+                    android:layout_width="@dimen/arrow_size"
+                    android:layout_height="@dimen/arrow_size"
+                    android:src="@drawable/left_arrow_key" />
+
+                <ImageView
+                    android:layout_width="@dimen/arrow_size"
+                    android:layout_height="@dimen/arrow_size" />
+
+                <ImageView
+                    android:id="@+id/imgArrowRight"
+                    android:layout_width="@dimen/arrow_size"
+                    android:layout_height="@dimen/arrow_size"
+                    android:src="@drawable/right_arrow_key" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="@dimen/arrow_size"
+                    android:layout_height="@dimen/arrow_size" />
+
+                <ImageView
+                    android:id="@+id/imgArrowDown"
+                    android:layout_width="@dimen/arrow_size"
+                    android:layout_height="@dimen/arrow_size"
+                    android:src="@drawable/down_arrow_key"
+                    />
+
+                <ImageView
+                    android:layout_width="@dimen/arrow_size"
+                    android:layout_height="@dimen/arrow_size" />
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Clear"
+            android:onClick="btnClearOnCLick"/>
+
+        <TextView
+            android:id="@+id/txtXLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="x: " />
+
+        <TextView
+            android:id="@+id/txtX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="999" />
+
+        <TextView
+            android:id="@+id/txtYLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="y: " />
+
+        <TextView
+            android:id="@+id/txtY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="999" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/imgCanvas"
+            android:layout_width="300dp"
+            android:layout_height="400dp" />
+    </RelativeLayout>
+</LinearLayout>

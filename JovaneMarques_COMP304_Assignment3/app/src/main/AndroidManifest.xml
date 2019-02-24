@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TaskDrawLinesActivity" />
+        <activity android:name=".SunEarthAnimationActivity" />
+        <activity android:name=".EatEatActivity"></activity>
     </application>
 
 </manifest>

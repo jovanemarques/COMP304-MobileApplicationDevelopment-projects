@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">JovaneMarques_COMP304_Assignment3</string>
+    <string name="app_name">Assignment 3</string>
+    <string-array name="strArrTasks">
+        <item>Draw Lines Task (Task 1)</item>
+        <item>Sun and Earth Task (Task 2)</item>
+        <item>Eat Eat Task (Task 3)</item>
+    </string-array>
+    <string-array name="lineSizes">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>50</item>
+        <item>100</item>
+    </string-array>
 </resources>
