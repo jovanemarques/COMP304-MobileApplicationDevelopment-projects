@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">JovaneMarques_COMP304_003_Midterm</string>
+    <string-array name="arrActivities">
+        <item>Anaerobic</item>
+        <item>Aerobic</item>
+        <item>Weight-Loss</item>
+        <item>Light Heart Rate</item>
+    </string-array>
+    <string name="anae">MAXIMUM (Anaerobic)</string>
+    <string name="aero">HARD (Aerobic)</string>
+    <string name="weig">MODERATE (Weight-Loss)</string>
+    <string name="light">LIGHT</string>
+
+</resources>
