@@ -71,6 +71,7 @@
                 android:id="@+id/edtDate"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
+                android:inputType="date"
                 tools:layout_editor_absoluteX="18dp"
                 tools:layout_editor_absoluteY="28dp" />
 
@@ -88,7 +89,7 @@
 
             <EditText
                 android:id="@+id/edtTime"
-                android:layout_width="100dp"
+                android:layout_width="283dp"
                 android:layout_height="wrap_content"
                 tools:layout_editor_absoluteX="18dp"
                 tools:layout_editor_absoluteY="28dp" />
@@ -115,13 +116,14 @@
                 tools:layout_editor_absoluteY="16dp" />
         </TableRow>
 
-        <TableRow>
+        <TableRow android:layout_height="113dp">
 
             <ImageView
-                android:layout_width="210dp"
                 android:id="@+id/btnBook"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/bookticket" android:onClick="btnBook_Click"/>
+                android:onClick="btnBook_Click"
+                android:src="@drawable/bookticket" />
         </TableRow>
     </TableLayout>
 

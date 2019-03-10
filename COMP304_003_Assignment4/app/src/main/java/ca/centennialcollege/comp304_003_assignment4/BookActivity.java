@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class BookActivity extends AppCompatActivity {
@@ -17,31 +18,35 @@ public class BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
         dbManager = new DBManager(this);
+        //query db for movies
+        //fill the spinner
     }
 
     public void btnBook_Click(View view) {
-        //Spinner sp = findViewById(R.id.sp);
-
+        EditText edtDate = findViewById(R.id.edtDate);
+        TextView txtPrice = findViewById(R.id.txtPrice);
+        EditText edtTime = findViewById(R.id.edtTime);
         //get user info to save
 
-//        "create table Booking (" +
-//                "emailId       text not null, " +
-//                "bookingId     integer primary key autoincrement, " +
-//                "movieId       int not null, " +
-//                "paymentDate   text not null, " +
-//                "amountPaid    text not null, " +
-//                "showDate      text not null, " +
-//                "showTime      text not null, " +
-//                "bookingStatus text not null " +
-//                ");"
-
-//        dbManager.bookSave(
-//
-//        );
+        dbManager.bookSave(
+                "jovanemarques@gmail.com",
+                "1",
+                "1",
+                "2019/04/01",
+                txtPrice.getText().toString(),
+                edtDate.getText().toString(),
+                edtTime.getText().toString(),
+                "Pending"
+        );
 
         Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent(this, BookInfoActivity.class);
+
+        intent.putExtra("txtPrice", txtPrice.getText().toString());
+        intent.putExtra("edtDate", edtDate.getText().toString());
+        intent.putExtra("edtTime", edtTime.getText().toString());
+
         startActivity(intent);
     }
 }

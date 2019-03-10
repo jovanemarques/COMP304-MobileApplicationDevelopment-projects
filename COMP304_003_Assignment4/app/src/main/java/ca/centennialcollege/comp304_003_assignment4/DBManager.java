@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBManager extends SQLiteOpenHelper {
 
     private static final int DB_VERSION = 1;
@@ -37,6 +40,7 @@ public class DBManager extends SQLiteOpenHelper {
                     "director  text not null," +
                     "genre     text not null" +
                     ");",
+            "insert into Movies values (1, 'Captain Marvel', 'Director Bla', 'Action');",
             "create table Booking (" +
                     "emailId       text not null, " +
                     "bookingId     integer primary key autoincrement, " +
@@ -107,6 +111,18 @@ public class DBManager extends SQLiteOpenHelper {
         }
     }
 
+//    public List<String> getMovies() {
+//        // get movies
+//    }
+
+//    public List<String> getAudience(String email) {
+//        //get an user
+//        List<String> result = new ArrayList<String>();
+//        result.add("adcavav");
+//        result.add("vavasvas");
+//        return result;
+//    }
+
     public boolean checkAdminLogin(String username, String password) {
         return checkLogin("Admin", username, password);
     }
@@ -134,6 +150,22 @@ public class DBManager extends SQLiteOpenHelper {
 
         try (SQLiteDatabase db = this.getReadableDatabase()) {
             db.insert("Audience", null, cv);
+        }
+    }
+
+    public void bookSave(String emailId, String bookingId, String movieId, String paymentDate, String amountPaid, String showDate, String showTime, String bookingStatus) {
+        ContentValues cv = new ContentValues();
+        cv.put("emailId", emailId);
+        cv.put("bookingId", bookingId);
+        cv.put("movieId", movieId);
+        cv.put("paymentDate", paymentDate);
+        cv.put("amountPaid", amountPaid);
+        cv.put("showDate", showDate);
+        cv.put("showTime", showTime);
+        cv.put("bookingStatus", bookingStatus);
+
+        try (SQLiteDatabase db = this.getReadableDatabase()) {
+            db.insert("Booking", null, cv);
         }
     }
 //    public List getAll(String table) {
