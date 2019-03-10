@@ -14,12 +14,12 @@
         android:text="City" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edtCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="City" />
 
     <TextView
         android:id="@+id/textView9"
@@ -28,12 +28,12 @@
         android:text="Email" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="Email" />
 
     <TextView
         android:id="@+id/textView8"
@@ -42,12 +42,12 @@
         android:text="Username" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/edtUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="Username" />
 
     <TextView
         android:id="@+id/textView7"
@@ -56,12 +56,12 @@
         android:text="Password" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:inputType="textPassword"
+        android:text="Password" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -76,13 +76,13 @@
             android:text="First Name" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/edtFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="First Name" />
 
         <TextView
             android:id="@+id/textView6"
@@ -92,13 +92,13 @@
             android:text="Last Name" />
 
         <EditText
-            android:id="@+id/editText6"
+            android:id="@+id/edtLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="Last Name" />
     </LinearLayout>
 
     <TextView
@@ -108,12 +108,12 @@
         android:text="Address" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/edtAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="Address" />
 
     <TextView
         android:id="@+id/textView4"
@@ -122,14 +122,14 @@
         android:text="Postal Code" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edtPostalCode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:text="Postal Code" />
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:text="Save"/>
+        android:layout_height="wrap_content" android:text="Save" android:id="@+id/btnSave" android:onClick="btnSave_Click"/>
 </LinearLayout>

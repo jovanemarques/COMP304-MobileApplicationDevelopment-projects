@@ -1,9 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".BookActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:text="@string/movieTitle"
+        android:textSize="30sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textViewMovieName"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Movie Name"
+                tools:layout_editor_absoluteX="18dp"
+                tools:layout_editor_absoluteY="28dp" />
+
+            <Spinner
+                android:id="@+id/spMovieName"
+                android:layout_width="168dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:entries="@array/movieName"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="85dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                tools:layout_editor_absoluteX="18dp"
+                tools:layout_editor_absoluteY="28dp" />
+
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="$15.00"
+                tools:layout_editor_absoluteX="18dp"
+                tools:layout_editor_absoluteY="28dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textViewDate"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                tools:layout_editor_absoluteX="18dp"
+                tools:layout_editor_absoluteY="28dp" />
+
+            <EditText
+                android:id="@+id/edtDate"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="18dp"
+                tools:layout_editor_absoluteY="28dp" />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                tools:layout_editor_absoluteX="18dp"
+                tools:layout_editor_absoluteY="28dp" />
+
+            <EditText
+                android:id="@+id/edtTime"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                tools:layout_editor_absoluteX="18dp"
+                tools:layout_editor_absoluteY="28dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textViewPersonType"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Person"
+                tools:layout_editor_absoluteX="18dp"
+                tools:layout_editor_absoluteY="28dp" />
+
+            <Spinner
+                android:id="@+id/spPersonType"
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:entries="@array/personType"
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="85dp"
+                tools:layout_editor_absoluteY="16dp" />
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:layout_width="210dp"
+                android:id="@+id/btnBook"
+                android:layout_height="match_parent"
+                android:src="@drawable/bookticket" android:onClick="btnBook_Click"/>
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

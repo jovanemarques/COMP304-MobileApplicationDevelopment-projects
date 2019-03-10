@@ -1,8 +1,10 @@
 package ca.centennialcollege.comp304_003_assignment4;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 public class NavigationActivity extends AppCompatActivity {
@@ -13,9 +15,19 @@ public class NavigationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_navigation);
 
         SharedPreferences sharedPreferences = getSharedPreferences("Assignment4SharedPreferences", MODE_PRIVATE);
-        String str = sharedPreferences.getString("username","");
+        String str = sharedPreferences.getString("username", "");
 
         TextView txtWelcome = findViewById(R.id.txtWelcome);
         txtWelcome.setText(str);
+    }
+
+    public void btnBookTicket_Click(View view) {
+        Intent intent = new Intent(this, BookActivity.class);
+        startActivity(intent);
+    }
+
+    public void btnUpdateInfo_Click(View view) {
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
     }
 }

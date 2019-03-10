@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Aesha / Jovane - Assignment 4</string>
+    <string name="movieTitle"> Enter movie details:</string>
+    <string-array name="movieName">
+        <item name="Captian Marvel"></item>
+        <item name="Shawshank Redemption"></item>
+        <item name="Conjuring"></item>
+        <item name="Iron Man"></item>
+        <item name="Aquaman"></item>
+    </string-array>
+
+    <string-array name="personType">
+        <item name="Staff"></item>
+        <item name=" Audience"></item>
+
+    </string-array>
 </resources>

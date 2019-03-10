@@ -10,10 +10,8 @@ public class DBManager extends SQLiteOpenHelper {
 
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "TicketBooking.db";
-
     private static final String[] INITIAL_SCRIPTS = {
-            "drop table if exists Audience; " +
-                    "create table Audience (" +
+            "create table Audience (" +
                     "emailId    text not null primary key, " +
                     "userName   text not null, " +
                     "password   text not null," +
@@ -23,24 +21,23 @@ public class DBManager extends SQLiteOpenHelper {
                     "city       text not null," +
                     "postalCode text not null" +
                     ");",
-            "drop table if exists Admin; " +
-                    "create table Admin (" +
+            "insert into Audience values ('jovanemarques@gmail.com', 'jovane', 'jjj', 'Jovane', " +
+                    "'Marques', 'Street Av. 999', 'Toronto', 'A1A1A1');",
+            "create table Admin (" +
                     "employeeId integer primary key autoincrement, " +
                     "userName   text not null, " +
                     "password   text not null," +
                     "firstName  text not null," +
                     "lastName   text not null" +
-                    ");" +
-                    "insert into Admin values (1, 'jovane', 'jjj', 'Jovane', 'Marques');",
-            "drop table if exists Movies; " +
-                    "create table Movies (" +
+                    ");",
+            "insert into Admin values (1, 'admin', 'admin', 'Admin', 'Admin');",
+            "create table Movies (" +
                     "movieId   integer primary key autoincrement, " +
                     "movieName text not null, " +
                     "director  text not null," +
                     "genre     text not null" +
                     ");",
-            "drop table if exists Booking; " +
-                    "create table Booking (" +
+            "create table Booking (" +
                     "emailId       text not null, " +
                     "bookingId     integer primary key autoincrement, " +
                     "movieId       int not null, " +
@@ -52,8 +49,13 @@ public class DBManager extends SQLiteOpenHelper {
                     ");"
     };
 
+    private Context ctx;
+
     DBManager(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
+        // cleaning the DB
+        deleteDB(context);
+        ctx = context;
     }
 
     @Override
@@ -95,22 +97,44 @@ public class DBManager extends SQLiteOpenHelper {
 //        getAll(table);
 //    }
     public boolean checkLogin(String table, String username, String password) {
-        return true;
-//        try (SQLiteDatabase db = this.getReadableDatabase()) {
-//            String sql = "SELECT * FROM " + table +
-//                    "      WHERE userName = ?" +
-//                    "        AND password = ?";
-//            Cursor cursor = db.rawQuery(sql, new String[]{username, password});
-//            return cursor.getCount() > 0 ? true : false;
-//        }
+        //return true;
+        try (SQLiteDatabase db = this.getReadableDatabase()) {
+            String sql = "SELECT * FROM " + table +
+                    "      WHERE userName = ?" +
+                    "        AND password = ?";
+            Cursor cursor = db.rawQuery(sql, new String[]{username, password});
+            return cursor.getCount() > 0 ? true : false;
+        }
     }
 
     public boolean checkAdminLogin(String username, String password) {
         return checkLogin("Admin", username, password);
     }
 
+    public void deleteDB(Context context) {
+        context.deleteDatabase(DB_NAME);
+    }
+
     public boolean checkAudienceLogin(String username, String password) {
-        return checkLogin("AUDIENCE", username, password);
+        return checkLogin("Audience", username, password);
+    }
+
+    public void signUpSaveOrUpdate(String city, String password, String username, String address,
+                                   String email, String firstName, String lastName, String postalCode) {
+        //verify, if already exist, update, otherwise, save it
+        ContentValues cv = new ContentValues();
+        cv.put("emailId", email);
+        cv.put("userName", username);
+        cv.put("password", password);
+        cv.put("firstName", firstName);
+        cv.put("lastName", lastName);
+        cv.put("address", address);
+        cv.put("city", city);
+        cv.put("postalCode", postalCode);
+
+        try (SQLiteDatabase db = this.getReadableDatabase()) {
+            db.insert("Audience", null, cv);
+        }
     }
 //    public List getAll(String table) {
 //        try (SQLiteDatabase db = this.getReadableDatabase()) {

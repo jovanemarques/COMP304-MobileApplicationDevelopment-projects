@@ -16,15 +16,17 @@
         android:textSize="30sp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnBookTicket"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="btnBookTicket_Click"
         android:text="Book a ticket" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnUpdateInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="btnUpdateInfo_Click"
         android:text="Update User Info" />
 
     <ImageView
