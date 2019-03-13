@@ -17,7 +17,7 @@ public class BookActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
-        dbManager = new DBManager(this);
+        dbManager = DBManager.getDb(this);
         //query db for movies
         //fill the spinner
     }

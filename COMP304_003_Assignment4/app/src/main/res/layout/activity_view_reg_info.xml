@@ -8,27 +8,45 @@
 
     <TextView
         android:id="@+id/textView00"
-        android:layout_width="360dp"
-        android:layout_height="73dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Verify your info:"
         android:textAlignment="center"
-        android:textSize="40dp"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="28dp" />
+        android:textSize="40dp" />
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="User Name"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textViewUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                android:textSize="24sp" />
+        </TableRow>
 
         <TableRow>
 
             <TextView
                 android:id="@+id/textView1"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
-                tools:layout_editor_absoluteX="18dp"
-                tools:layout_editor_absoluteY="28dp" />
+                android:layout_weight="1"
+                android:text="First Name"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textViewName"
@@ -37,9 +55,7 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text=""
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="16dp" />
-
+                android:textSize="24sp" />
         </TableRow>
 
         <TableRow>
@@ -47,22 +63,18 @@
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Last Name"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="100dp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textViewLastName"
-                android:layout_width="154dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:inputType="textPersonName"
                 android:text=""
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="82dp" />
-
-
+                android:textSize="24sp" />
         </TableRow>
 
         <TableRow>
@@ -71,103 +83,87 @@
                 android:id="@+id/textVie3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Email"
-                tools:layout_editor_absoluteX="21dp"
-                tools:layout_editor_absoluteY="171dp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textViewEmail"
-                android:layout_width="217dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                tools:layout_editor_absoluteX="21dp"
-                tools:layout_editor_absoluteY="171dp" />
+                android:textSize="24sp" />
 
         </TableRow>
 
         <TableRow>
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Phone"
-                tools:layout_editor_absoluteX="21dp"
-                tools:layout_editor_absoluteY="171dp" />
-
-            <TextView
-                android:id="@+id/textViewPhone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                tools:layout_editor_absoluteX="21dp"
-                tools:layout_editor_absoluteY="171dp" />
-
-        </TableRow>
-        <TableRow>
             <TextView
                 android:id="@+id/textVie5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Address"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="294dp" />
+                android:textSize="24sp" />
+
             <TextView
                 android:id="@+id/textViewAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="294dp" />
+                android:textSize="24sp" />
         </TableRow>
+
         <TableRow>
+
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="City"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="366dp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textViewCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="366dp" />
+                android:textSize="24sp" />
         </TableRow>
+
         <TableRow>
 
             <TextView
                 android:id="@+id/editText6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Postal Code"
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="280dp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/editTextPostalCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:inputType="textPersonName"
                 android:text=""
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="280dp" />
+                android:textSize="24sp" />
 
 
-        </TableRow>
-        <TableRow>
-            <Button
-                android:id="@+id/btnGoBack"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Go to Login"
-                android:textAlignment="center" android:onClick="btnGoBack_Click"/>
         </TableRow>
     </TableLayout>
+
+    <Button
+        android:id="@+id/btnGoBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_span="2"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="btnGoBack_Click"
+        android:text="Go to Login"
+        android:textAlignment="center" />
+
 </LinearLayout>

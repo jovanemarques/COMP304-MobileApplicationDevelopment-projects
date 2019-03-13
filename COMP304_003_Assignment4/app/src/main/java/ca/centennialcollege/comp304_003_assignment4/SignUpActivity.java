@@ -16,7 +16,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        dbManager = new DBManager(this);
+        dbManager = DBManager.getDb(this);
     }
 
     public void btnSave_Click(View view) {

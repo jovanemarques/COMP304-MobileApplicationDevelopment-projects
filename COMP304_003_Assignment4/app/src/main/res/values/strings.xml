@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Aesha / Jovane - Assignment 4</string>
     <string name="movieTitle"> Enter movie details:</string>
+    <string name="welcome_user">Welcome</string>
+    <string name="username">username</string>
+    <string name="shared_preferences">Assignment4SharedPreferences</string>
+    <string name="msg_wrong_user_password">Wrong User/Password</string>
     <string-array name="movieName">
         <item>Captian Marvel</item>
         <item>Shawshank Redemption</item>

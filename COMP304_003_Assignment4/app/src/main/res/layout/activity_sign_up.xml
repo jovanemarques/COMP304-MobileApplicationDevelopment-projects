@@ -8,19 +8,6 @@
     tools:context=".SignUpActivity">
 
     <TextView
-        android:id="@+id/textView11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="City" />
-
-    <EditText
-        android:id="@+id/edtCity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -109,6 +96,19 @@
         android:inputType="textPersonName" />
 
     <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="City" />
+
+    <EditText
+        android:id="@+id/edtCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -122,6 +122,10 @@
         android:inputType="textPersonName" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" android:text="Save" android:id="@+id/btnSave" android:onClick="btnSave_Click"/>
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_dark"
+        android:onClick="btnSave_Click"
+        android:text="Register" />
 </LinearLayout>

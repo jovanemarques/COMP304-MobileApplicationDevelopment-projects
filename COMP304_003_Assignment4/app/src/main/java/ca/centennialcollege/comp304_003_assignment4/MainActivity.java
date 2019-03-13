@@ -1,5 +1,6 @@
 package ca.centennialcollege.comp304_003_assignment4;
 
+import android.arch.core.util.Function;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dbManager = new DBManager(this);
+        dbManager = DBManager.getDb(this);
     }
 
     public void btnLogin_Click(View view) {
@@ -25,29 +26,34 @@ public class MainActivity extends AppCompatActivity {
         EditText edtUsername = findViewById(R.id.edtUsername);
         EditText edtPassword = findViewById(R.id.edtPassword);
         RadioButton rbStaff = findViewById(R.id.rbStaff);
+        Function<String[], Boolean> func = null;
+
         if (rbStaff.isChecked()) {
-            if (dbManager.checkAdminLogin(edtUsername.getText().toString(), edtPassword.getText().toString())) {
-                Intent intent = new Intent(this, NavigationActivity.class);
-                saveOnSharedPreferences("username", edtUsername.getText().toString());
-                startActivity(intent);
-            } else {
-                Toast.makeText(getApplicationContext(), "Wrong User/Password", Toast.LENGTH_LONG).show();
-            }
+            func = dbManager::checkAdminLogin;
         } else {
-            if (dbManager.checkAudienceLogin(edtUsername.getText().toString(), edtPassword.getText().toString())) {
-                Intent intent = new Intent(this, NavigationActivity.class);
-                saveOnSharedPreferences("username", edtUsername.getText().toString());
-                startActivity(intent);
-            } else {
-                Toast.makeText(getApplicationContext(), "Wrong User/Password", Toast.LENGTH_LONG).show();
-            }
+            func = dbManager::checkAudienceLogin;
+        }
+
+        checkLogin(new String[]{
+                edtUsername.getText().toString(),
+                edtPassword.getText().toString()
+        }, func);
+    }
+
+    private void checkLogin(String[] data, Function<String[], Boolean> func) {
+        if (func.apply(data)) {
+            Intent intent = new Intent(this, NavigationActivity.class);
+            // saving the username on the shared preferences
+            saveOnSharedPreferences(getString(R.string.username), data[0]);
+            startActivity(intent);
+        } else {
+            Toast.makeText(getApplicationContext(), R.string.msg_wrong_user_password, Toast.LENGTH_LONG).show();
         }
     }
 
     private void saveOnSharedPreferences(String var, String str) {
-        SharedPreferences sharedPreferences = getSharedPreferences("Assignment4SharedPreferences", 0);
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.shared_preferences), 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-
         editor.putString(var, str);
         editor.commit();
     }

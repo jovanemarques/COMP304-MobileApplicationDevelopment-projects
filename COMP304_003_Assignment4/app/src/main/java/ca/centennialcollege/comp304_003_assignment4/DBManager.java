@@ -52,14 +52,18 @@ public class DBManager extends SQLiteOpenHelper {
                     "bookingStatus text not null " +
                     ");"
     };
+    private static DBManager db;
 
-    private Context ctx;
-
-    DBManager(Context context) {
+    private DBManager(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
-        // cleaning the DB
         deleteDB(context);
-        ctx = context;
+    }
+
+    public static DBManager getDb(Context context) {
+        if (db == null) {
+            db = new DBManager(context);
+        }
+        return db;
     }
 
     @Override
@@ -76,39 +80,38 @@ public class DBManager extends SQLiteOpenHelper {
     }
 
     public void add(String tableName, String fields[], String record[]) {
-        try (SQLiteDatabase db = this.getWritableDatabase()) {
-            ContentValues contentValues = new ContentValues();
-            for (int i = 0; i < record.length; i++) {
-                contentValues.put(fields[i], record[i]);
-            }
-            db.insert(tableName, null, contentValues);
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        for (int i = 0; i < record.length; i++) {
+            contentValues.put(fields[i], record[i]);
         }
-
+        db.insert(tableName, null, contentValues);
+        db.close();
     }
 
     public int update(String table, String fields[], String records[]) {
-        try (SQLiteDatabase db = this.getWritableDatabase()) {
-            ContentValues contentValues = new ContentValues();
-            for (int i = 0; i < records.length; i++)
-                contentValues.put(fields[i], records[i]);
-
-            return db.update(table, contentValues, fields[0] + " = ?",
-                    new String[]{records[0]});
-        }
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        for (int i = 0; i < records.length; i++)
+            contentValues.put(fields[i], records[i]);
+        int result = db.update(table, contentValues, fields[0] + " = ?",
+                new String[]{records[0]});
+        db.close();
+        return result;
     }
 
     //    public object getOne(String table) {
 //        getAll(table);
 //    }
     public boolean checkLogin(String table, String username, String password) {
-        //return true;
-        try (SQLiteDatabase db = this.getReadableDatabase()) {
-            String sql = "SELECT * FROM " + table +
-                    "      WHERE userName = ?" +
-                    "        AND password = ?";
-            Cursor cursor = db.rawQuery(sql, new String[]{username, password});
-            return cursor.getCount() > 0 ? true : false;
-        }
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "SELECT * FROM " + table +
+                "      WHERE userName = ?" +
+                "        AND password = ?";
+        Cursor cursor = db.rawQuery(sql, new String[]{username, password});
+        int c = cursor.getCount();
+        db.close();
+        return c > 0 ? true : false;
     }
 
 //    public List<String> getMovies() {
@@ -123,16 +126,16 @@ public class DBManager extends SQLiteOpenHelper {
 //        return result;
 //    }
 
-    public boolean checkAdminLogin(String username, String password) {
-        return checkLogin("Admin", username, password);
-    }
-
     public void deleteDB(Context context) {
         context.deleteDatabase(DB_NAME);
     }
 
-    public boolean checkAudienceLogin(String username, String password) {
-        return checkLogin("Audience", username, password);
+    public boolean checkAdminLogin(String[] data) {
+        return checkLogin("Admin", data[0], data[1]);
+    }
+
+    public boolean checkAudienceLogin(String[] data) {
+        return checkLogin("Audience", data[0], data[1]);
     }
 
     public void signUpSaveOrUpdate(String city, String password, String username, String address,
@@ -148,9 +151,9 @@ public class DBManager extends SQLiteOpenHelper {
         cv.put("city", city);
         cv.put("postalCode", postalCode);
 
-        try (SQLiteDatabase db = this.getReadableDatabase()) {
-            db.insert("Audience", null, cv);
-        }
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert("Audience", null, cv);
+        db.close();
     }
 
     public void bookSave(String emailId, String bookingId, String movieId, String paymentDate, String amountPaid, String showDate, String showTime, String bookingStatus) {
@@ -164,9 +167,28 @@ public class DBManager extends SQLiteOpenHelper {
         cv.put("showTime", showTime);
         cv.put("bookingStatus", bookingStatus);
 
-        try (SQLiteDatabase db = this.getReadableDatabase()) {
-            db.insert("Booking", null, cv);
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert("Booking", null, cv);
+        db.close();
+    }
+
+    public List<String> getAudienceInfo(String emailId) {
+        //List<List<String>> rows = new ArrayList<>();
+        List<String> cols = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT * FROM Audience WHERE emailId = ?";
+        Cursor cursor = db.rawQuery(selectQuery, new String[]{emailId});
+        //return only the first line
+        if (cursor.moveToFirst()) {
+//                do {
+            for (int i = 0; i < cursor.getColumnCount(); i++) {
+                cols.add(cursor.getString(i));
+            }
+//                    rows.add(cols);
+//                } while (cursor.moveToNext());
         }
+        db.close();
+        return cols;
     }
 //    public List getAll(String table) {
 //        try (SQLiteDatabase db = this.getReadableDatabase()) {

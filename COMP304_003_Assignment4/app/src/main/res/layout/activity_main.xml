@@ -24,8 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:inputType="textPersonName" />
 
     <TextView
         android:id="@+id/textView3"
@@ -38,8 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="Name" />
+        android:inputType="textPassword" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -73,6 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@android:color/holo_blue_dark"
             android:onClick="btnLogin_Click"
             android:text="Login" />
 
@@ -81,7 +80,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sign Up" android:onClick="btnSignUp_Click" />
+            android:background="@android:color/darker_gray"
+            android:onClick="btnSignUp_Click"
+            android:text="Sign Up" />
     </LinearLayout>
 
 </LinearLayout>

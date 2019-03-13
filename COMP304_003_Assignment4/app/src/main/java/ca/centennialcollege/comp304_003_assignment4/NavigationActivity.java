@@ -14,11 +14,11 @@ public class NavigationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("Assignment4SharedPreferences", MODE_PRIVATE);
-        String str = sharedPreferences.getString("username", "");
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.shared_preferences), MODE_PRIVATE);
+        String username = sharedPreferences.getString(getString(R.string.username), "");
 
         TextView txtWelcome = findViewById(R.id.txtWelcome);
-        txtWelcome.setText(str);
+        txtWelcome.setText(getString(R.string.welcome_user) + " " + username);
     }
 
     public void btnBookTicket_Click(View view) {
