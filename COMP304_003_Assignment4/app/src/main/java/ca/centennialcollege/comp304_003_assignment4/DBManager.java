@@ -38,9 +38,15 @@ public class DBManager extends SQLiteOpenHelper {
                     "movieId   integer primary key autoincrement, " +
                     "movieName text not null, " +
                     "director  text not null," +
-                    "genre     text not null" +
+                    "genre     text not null," +
+                    "imageLink text not null" +
                     ");",
-            "insert into Movies values (1, 'Captain Marvel', 'Director Bla', 'Action');",
+            "insert into Movies values (1, 'Captain Marvel', 'Anna Boden, Ryan Fleck', 'Superhero', " +
+                    "'https://m.media-amazon.com/images/M/" +
+                    "MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_UX182_CR0,0,182,268_AL_.jpg');",
+            "insert into Movies values (2, 'How to Train Your Dragon: The Hidden World', 'Dean DeBlois', 'Animation', " +
+                    "'https://m.media-amazon.com/images/M/" +
+                    "MV5BMjIwMDIwNjAyOF5BMl5BanBnXkFtZTgwNDE1MDc2NTM@._V1_UX182_CR0,0,182,268_AL_.jpg');",
             "create table Booking (" +
                     "emailId       text not null, " +
                     "bookingId     integer primary key autoincrement, " +
@@ -100,9 +106,6 @@ public class DBManager extends SQLiteOpenHelper {
         return result;
     }
 
-    //    public object getOne(String table) {
-//        getAll(table);
-//    }
     public boolean checkLogin(String table, String username, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
         String sql = "SELECT * FROM " + table +
@@ -113,18 +116,6 @@ public class DBManager extends SQLiteOpenHelper {
         db.close();
         return c > 0 ? true : false;
     }
-
-//    public List<String> getMovies() {
-//        // get movies
-//    }
-
-//    public List<String> getAudience(String email) {
-//        //get an user
-//        List<String> result = new ArrayList<String>();
-//        result.add("adcavav");
-//        result.add("vavasvas");
-//        return result;
-//    }
 
     public void deleteDB(Context context) {
         context.deleteDatabase(DB_NAME);
@@ -156,10 +147,10 @@ public class DBManager extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void bookSave(String emailId, String bookingId, String movieId, String paymentDate, String amountPaid, String showDate, String showTime, String bookingStatus) {
+    public void bookSave(String emailId, String movieId, String paymentDate, String amountPaid, String showDate, String showTime, String bookingStatus) {
         ContentValues cv = new ContentValues();
         cv.put("emailId", emailId);
-        cv.put("bookingId", bookingId);
+        //cv.put("bookingId", "");
         cv.put("movieId", movieId);
         cv.put("paymentDate", paymentDate);
         cv.put("amountPaid", amountPaid);
@@ -190,28 +181,38 @@ public class DBManager extends SQLiteOpenHelper {
         db.close();
         return cols;
     }
-//    public List getAll(String table) {
-//        try (SQLiteDatabase db = this.getReadableDatabase()) {
-//            List rows = new ArrayList();
-//
-//            String selectQuery = "SELECT * FROM " + table;
-//
-//            Cursor cursor = db.rawQuery(selectQuery, null);
-//            ArrayList row = new ArrayList();
-//            while (cursor.moveToNext()) {
-//
-//            }
-////            if (cursor.moveToFirst()) {
-////                do {
-////                    for (int i = 0; i < cursor.getColumnCount(); i++) {
-////                        row.add(cursor.getString(i));
-////                    }
-////
-////                    rows.add(row);
-////
-////                } while (cursor.moveToNext());
-////            }
-//            return rows;
-//        }
-//    }
+
+    public List<String> getAllMovieNames() {
+        return getAll("Movies", "movieName");
+    }
+
+    public List<String> getAllAudienceIds() {
+        return getAll("Audience", "emailId");
+    }
+
+    public List<String> getAll(String table, String field) {
+        List<String> rows = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT " + field + " FROM " + table;
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                rows.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+
+        db.close();
+        return rows;
+    }
+
+    public boolean isStaff(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "SELECT * FROM Admin " +
+                "      WHERE userName = ?";
+        Cursor cursor = db.rawQuery(sql, new String[]{username});
+        int c = cursor.getCount();
+        db.close();
+        return c > 0 ? true : false;
+    }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="movieDate">
+        <item>2019-03-15</item>
+        <item>2019-03-16</item>
+        <item>2019-03-17</item>
+    </string-array>
+    <string-array name="movieTime">
+        <item>11:00am</item>
+        <item>12:00pm</item>
+        <item>1:00pm</item>
+    </string-array>
+</resources>

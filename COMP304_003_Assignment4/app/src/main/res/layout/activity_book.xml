@@ -10,31 +10,27 @@
         android:layout_width="match_parent"
         android:layout_height="71dp"
         android:text="@string/movieTitle"
+        android:textAlignment="center"
         android:textSize="30sp" />
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TableRow>
 
             <TextView
                 android:id="@+id/textViewMovieName"
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Movie Name"
-                tools:layout_editor_absoluteX="18dp"
-                tools:layout_editor_absoluteY="28dp" />
+                android:text="Movie Name" />
 
             <Spinner
                 android:id="@+id/spMovieName"
-                android:layout_width="168dp"
-                android:layout_height="match_parent"
+                android:layout_width="332dp"
+                android:layout_height="wrap_content"
                 android:ems="10"
-                android:entries="@array/movieName"
-                android:inputType="textPersonName"
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="16dp" />
+                android:inputType="textPersonName" />
 
         </TableRow>
 
@@ -42,89 +38,56 @@
 
             <TextView
                 android:id="@+id/textView1"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price"
-                tools:layout_editor_absoluteX="18dp"
-                tools:layout_editor_absoluteY="28dp" />
+                android:text="Price" />
 
             <TextView
                 android:id="@+id/txtPrice"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="$15.00"
-                tools:layout_editor_absoluteX="18dp"
-                tools:layout_editor_absoluteY="28dp" />
+                android:textSize="18sp" />
         </TableRow>
 
         <TableRow>
 
             <TextView
                 android:id="@+id/textViewDate"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date"
-                tools:layout_editor_absoluteX="18dp"
-                tools:layout_editor_absoluteY="28dp" />
-
-            <EditText
-                android:id="@+id/edtDate"
-                android:layout_width="100dp"
+                android:text="Date" />
+            <Spinner
+                android:id="@+id/spMovieDate"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="date"
-                tools:layout_editor_absoluteX="18dp"
-                tools:layout_editor_absoluteY="28dp" />
-
+                android:ems="10"
+                android:entries="@array/movieDate" />
         </TableRow>
 
         <TableRow>
 
             <TextView
                 android:id="@+id/textViewTime"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Time"
-                tools:layout_editor_absoluteX="18dp"
-                tools:layout_editor_absoluteY="28dp" />
-
-            <EditText
-                android:id="@+id/edtTime"
-                android:layout_width="283dp"
-                android:layout_height="wrap_content"
-                tools:layout_editor_absoluteX="18dp"
-                tools:layout_editor_absoluteY="28dp" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/textViewPersonType"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="Person"
-                tools:layout_editor_absoluteX="18dp"
-                tools:layout_editor_absoluteY="28dp" />
-
+                android:text="Time" />
             <Spinner
-                android:id="@+id/spPersonType"
-                android:layout_width="168dp"
+                android:id="@+id/spMovieTime"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:entries="@array/personType"
-                android:inputType="textPersonName"
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="16dp" />
+                android:entries="@array/movieTime" />
+
         </TableRow>
 
-        <TableRow android:layout_height="113dp">
 
-            <ImageView
-                android:id="@+id/btnBook"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:onClick="btnBook_Click"
-                android:src="@drawable/bookticket" />
-        </TableRow>
     </TableLayout>
+
+    <ImageView
+        android:id="@+id/btnBook"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:onClick="btnBook_Click"
+        android:src="@drawable/bookticket" />
 
 </LinearLayout>

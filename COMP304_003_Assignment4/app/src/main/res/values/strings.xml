@@ -5,16 +5,4 @@
     <string name="username">username</string>
     <string name="shared_preferences">Assignment4SharedPreferences</string>
     <string name="msg_wrong_user_password">Wrong User/Password</string>
-    <string-array name="movieName">
-        <item>Captian Marvel</item>
-        <item>Shawshank Redemption</item>
-        <item>Conjuring</item>
-        <item>Iron Man</item>
-        <item>Aquaman</item>
-    </string-array>
-
-    <string-array name="personType">
-        <item>Staff</item>
-        <item>Audience</item>
-    </string-array>
 </resources>

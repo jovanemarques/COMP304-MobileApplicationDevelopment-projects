@@ -7,6 +7,12 @@
     android:orientation="vertical"
     tools:context=".SignUpActivity">
 
+    <Spinner
+        android:id="@+id/spAudience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
     <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
